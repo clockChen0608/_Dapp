@@ -1,34 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Container } from '@chakra-ui/react';
+import { Routes, Route } from 'react-router-dom'
+import NavBar from './components/NavBar';
+import ERC20 from './tokens/ERC20';
+import ERC677 from './tokens/ERC677';
+import ERC777 from './tokens/ERC777';
+import ERC721 from './NFTs/ERC721';
+import ERC721A from './NFTs/ERC721A';
+import ERC721R from './NFTs/ERC721R';
+import ERC721Z from './NFTs/ERC721Z';
+import ERC1155 from './NFTs/ERC1155';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export function App() {
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <>
+      <NavBar />
+      <Container paddingY='10'>
+        <Routes>
+          {/* <Route path='/' element={<Home />} /> */}
+          <Route path='/20' element={<ERC20 />} />
+          <Route path='/677' element={<ERC677 />} />
+          <Route path='/777' element={<ERC777 />} />
+          <Route path='/721' element={<ERC721 />} />
+          <Route path='/721A' element={<ERC721A />} />
+          <Route path='/721R' element={<ERC721R />} />
+          <Route path='/721Z' element={<ERC721Z />} />
+          <Route path='/1155' element={<ERC1155 />} />         
+        </Routes>
+      </Container>
+    </>
+  );
 }
-
-export default App
