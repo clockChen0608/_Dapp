@@ -14,6 +14,7 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  Image
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
@@ -21,6 +22,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export default function NavBar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -51,43 +53,23 @@ export default function NavBar() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Text
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}>
-            Logo
-          </Text>
-
+            <Image
+                        style={{ borderRadius: '500px' }}
+                        src={`https://opensea.mypinata.cloud/ipfs/QmfPC9jKTBUuqybsvExPswhx42hbL9QwFtqczKS6S9nBx7`}
+                        width={50}
+                        height={50}
+                    />
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
           </Flex>
         </Flex>
 
         <Stack
-          flex={{ base: 1, md: 0 }}
+          flex={{ base: 1, md: 1 }}
           justify={'flex-end'}
           direction={'row'}
-          spacing={6}>
-          <Button
-            as={'a'}
-            fontSize={'sm'}
-            fontWeight={400}
-            variant={'link'}
-            href={'#'}>
-            Sign In
-          </Button>
-          <Button
-            display={{ base: 'none', md: 'inline-flex' }}
-            fontSize={'sm'}
-            fontWeight={600}
-            color={'white'}
-            bg={'pink.400'}
-            // href={'#'}
-            _hover={{
-              bg: 'pink.300',
-            }}>
-            Sign Up
-          </Button>
+          spacing={10}>
+          <ConnectButton />
         </Stack>
       </Flex>
 
@@ -251,41 +233,56 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'Inspiration',
+    label: 'Tokens',
     children: [
       {
-        label: 'Explore Design Work',
+        label: 'Erc20',
         subLabel: 'Trending Design to inspire you',
-        href: '#',
+        href: '/20',
       },
       {
-        label: 'New & Noteworthy',
+        label: 'Erc677',
         subLabel: 'Up-and-coming Designers',
-        href: '#',
+        href: '/677',
+      },
+      {
+        label: 'Erc777',
+        subLabel: 'Up-and-coming Designers',
+        href: '/777',
       },
     ],
   },
   {
-    label: 'Find Work',
+    label: 'NFTs',
     children: [
       {
-        label: 'Job Board',
+        label: 'Erc721A',
         subLabel: 'Find your dream design job',
-        href: '#',
+        href: '/721A',
       },
       {
-        label: 'Freelance Projects',
+        label: 'Erc721R',
         subLabel: 'An exclusive list for contract work',
-        href: '#',
+        href: '/721R',
+      },
+      {
+        label: 'Erc721Z',
+        subLabel: 'An exclusive list for contract work',
+        href: '/721Z',
+      },
+      {
+        label: 'Erc1155',
+        subLabel: 'An exclusive list for contract work',
+        href: '/1155',
       },
     ],
   },
   {
-    label: 'Learn Design',
+    label: 'Liquid Pools',
     href: '#',
   },
   {
-    label: 'Hire Designers',
+    label: 'Home',
     href: '#',
   },
 ];
