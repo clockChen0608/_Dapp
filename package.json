@@ -9,15 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.9",
     "@chakra-ui/react": "^2.3.2",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@rainbow-me/rainbowkit": "^0.6.0",
-    "bootstrap": "^5.2.1",
     "ethers": "^5.7.1",
     "framer-motion": "^7.3.5",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.5.0",
     "react-card-flip": "^1.1.5",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.0",
