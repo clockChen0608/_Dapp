@@ -13,19 +13,25 @@ import {
   PopoverContent,
   useColorModeValue,
   useBreakpointValue,
+  useColorMode,
   useDisclosure,
   Image
 } from '@chakra-ui/react';
+
 import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  MoonIcon, SunIcon 
 } from '@chakra-ui/icons';
+
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+
 
 export default function NavBar() {
   const { isOpen, onToggle } = useDisclosure();
+    const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <Box>
@@ -54,7 +60,8 @@ export default function NavBar() {
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
             <Image
-                        style={{ borderRadius: '500px' }}
+                        style={{ borderRadius: '500px' }}                        
+                        fallbackSrc={`https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg`}
                         src={`https://opensea.mypinata.cloud/ipfs/QmfPC9jKTBUuqybsvExPswhx42hbL9QwFtqczKS6S9nBx7`}
                         width={50}
                         height={50}
@@ -63,13 +70,19 @@ export default function NavBar() {
             <DesktopNav />
           </Flex>
         </Flex>
+         
 
         <Stack
           flex={{ base: 1, md: 1 }}
           justify={'flex-end'}
           direction={'row'}
           spacing={10}>
+          <Button onClick={toggleColorMode} >
+                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+            </Button>
+          <div>
           <ConnectButton />
+          </div>  
         </Stack>
       </Flex>
 
