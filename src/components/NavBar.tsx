@@ -86,15 +86,15 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
   return (
-    <Stack direction={'row'} spacing={4}>
+    <Stack direction={'row'} spacing={4} marginTop={3}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
+        <Box key={navItem.label} >        
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
               <Link
                 p={2}
                 href={navItem.href ?? '#'}
-                fontSize={'sm'}
+                fontSize={'lg'}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
@@ -228,32 +228,33 @@ interface NavItem {
   label: string;
   subLabel?: string;
   children?: Array<NavItem>;
-  href?: string;
+  href?: string;  
 }
 
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Tokens',
+    
     children: [
       {
         label: 'Erc20',
         subLabel: 'Trending Design to inspire you',
-        href: '/20',
+        href: '/20',        
       },
       {
         label: 'Erc677',
         subLabel: 'Up-and-coming Designers',
-        href: '/677',
+        href: '/677',        
       },
       {
         label: 'Erc777',
         subLabel: 'Up-and-coming Designers',
-        href: '/777',
+        href: '/777',        
       },
     ],
   },
   {
-    label: 'NFTs',
+    label: 'NFTs',    
     children: [
       {
         label: 'Erc721A',
@@ -279,10 +280,12 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: 'Liquid Pools',
+    
     href: '#',
   },
   {
     label: 'Home',
+    
     href: '#',
   },
 ];
