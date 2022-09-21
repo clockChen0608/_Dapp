@@ -24,6 +24,7 @@ import {
 } from '@chakra-ui/icons';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
+
 export default function NavBar() {
   const { isOpen, onToggle } = useDisclosure();
 
@@ -37,9 +38,10 @@ export default function NavBar() {
         px={{ base: 4 }}
         borderBottom={1}
         borderStyle={'solid'}
-        borderRadius={30}
+        fontFamily={'VT323'}
         borderColor={useColorModeValue('gray.200', 'gray.900')}
-        align={'center'}>
+        align={'center'}
+        >
         <Flex
           flex={{ base: 1, md: 'auto' }}
           ml={{ base: -2 }}
@@ -81,7 +83,7 @@ export default function NavBar() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
+  const linkColor = useColorModeValue('blue.200', 'blue.600');
   const linkHoverColor = useColorModeValue('gray.800', 'white');
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
@@ -94,8 +96,9 @@ const DesktopNav = () => {
               <Link
                 p={2}
                 href={navItem.href ?? '#'}
-                fontSize={'lg'}
-                fontWeight={500}
+                fontSize={'xl'}
+                fontWeight={700}
+                fontFamily={'VT323'}
                 color={linkColor}
                 _hover={{
                   textDecoration: 'none',

@@ -14,14 +14,15 @@ const bgStyle = {
   backgroundSize: '100%',
   width:'100vw',
   height:'90vh',
-  filter: 'blur(2px)',
 };
+
+
 
 export function App() {
   return (
     <div>
       <NavBar />
-      <div style={bgStyle}>
+      <div style={bgStyle} backdropFilter='auto' backdropBlur='8px'>
       <Container paddingY={[2,5,20]}>
       <div>
         <Routes>
