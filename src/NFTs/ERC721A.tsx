@@ -102,12 +102,8 @@ function Erc721A() {
                     />
                 </div>
                 <div style={{
-                    // width: '300px',
-                    // height: '300px',
                     background: '#fbd7f8',
-                    // fontSize: '40px',
                     color: 'blue',
-                    // margin: '20px',
                     borderRadius: '30px',
                 }}>
                     <Image src={getImgURL(mintedTokenId)}

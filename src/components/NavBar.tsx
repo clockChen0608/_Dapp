@@ -30,13 +30,14 @@ export default function NavBar() {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue('white', 'gray.800')}
+        bg='linear-gradient(#e66465, #9198e5)'
         color={useColorModeValue('gray.600', 'white')}
         minH={'60px'}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
         borderStyle={'solid'}
+        borderRadius={30}
         borderColor={useColorModeValue('gray.200', 'gray.900')}
         align={'center'}>
         <Flex
@@ -53,12 +54,11 @@ export default function NavBar() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            <Image
-                        style={{ borderRadius: '500px' }}
-                        src={`https://opensea.mypinata.cloud/ipfs/QmfPC9jKTBUuqybsvExPswhx42hbL9QwFtqczKS6S9nBx7`}
-                        width={50}
-                        height={50}
-                    />
+          <Image    style={{ borderRadius: '500px' }}
+                    src={`https://cloudflare-ipfs.com/ipfs/QmfPC9jKTBUuqybsvExPswhx42hbL9QwFtqczKS6S9nBx7`}
+                    width={50}
+                    height={50}
+                  />
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
           </Flex>
@@ -238,17 +238,17 @@ const NAV_ITEMS: Array<NavItem> = [
     children: [
       {
         label: 'Erc20',
-        subLabel: 'Trending Design to inspire you',
+        subLabel: 'Get free tokens on testnet!!',
         href: '/20',        
       },
       {
         label: 'Erc677',
-        subLabel: 'Up-and-coming Designers',
+        subLabel: 'See what different between three tokens',
         href: '/677',        
       },
       {
         label: 'Erc777',
-        subLabel: 'Up-and-coming Designers',
+        subLabel: 'See what difference beyween three tokens',
         href: '/777',        
       },
     ],
@@ -280,12 +280,10 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: 'Liquid Pools',
-    
     href: '#',
   },
   {
-    label: 'Home',
-    
+    label: 'Home', 
     href: '#',
   },
 ];
