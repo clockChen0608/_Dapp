@@ -92,7 +92,6 @@ function Erc721A() {
                     background: '#d7fbda',
                     // fontSize: '40px',
                     color: 'green',
-
                     borderRadius: '30px',
                 }}>
                     <Image src={getImgURL(mintedTokenId)}
