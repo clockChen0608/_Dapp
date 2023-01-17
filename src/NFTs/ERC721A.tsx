@@ -148,7 +148,7 @@ function Erc721A() {
 
             {
                 mintError && (
-                    <pre style={{ marginTop: '8px', color: 'red' }}>
+                    <pre style={{ marginTop: '8px', color: 'red' ,wordWrap: normal }}>
                         <code>{JSON.stringify(mintError.message, null, ' ')}</code>
                     </pre>
                 )
